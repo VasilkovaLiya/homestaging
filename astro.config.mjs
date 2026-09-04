@@ -8,6 +8,7 @@ import favicons from "astro-favicons";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.CANONICAL_URL,
+  base: "/homestaging",
   output: "static",
 
   build: {
