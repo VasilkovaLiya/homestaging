@@ -7,32 +7,32 @@ import transformImage from "/src/assets/images/transform.jpg";
 const processSteps = [
     {
         id: 1,
-        title: "Connect",
+        title: "01. Знакомимся",
         description:
-            "Begin with a consultation where you share your style, needs, and vision. We listen, ask the right questions, and get to know what truly makes a space feel like home for you.",
+            "Бесплатно созвонимся на 30–40 минут. Вы покажете квартиру и расскажете о задаче, пожеланиях и бюджете.",
         image: {
             src: consultationImage,
-            alt: "People talking about an interior design project",
+            alt: "Обсуждение задачи и пожеланий по обустройству квартиры",
         },
     },
     {
         id: 2,
-        title: "Design",
+        title: "02. Собираем решение",
         description:
-            "Using your input, we make a personalized design plan with mood boards, 3D renderings, and detailed layouts — so you can visualize your space before the transformation begins.",
+            "Определяем, что можно сохранить, что стоит заменить и чего не хватает. Я подбираю конкретные предметы и согласовываю их с вами.",
         image: {
             src: designImage,
-            alt: "Detailed layouts of entry and bath",
+            alt: "Подбор мебели, текстиля, освещения и декора для интерьера",
         },
     },
     {
         id: 3,
-        title: "Transform",
+        title: "03. Реализуем",
         description:
-            "Watch your space come to life as our team brings the design to reality with expert craftsmanship, thoughtful execution, and a keen eye for detail.",
+            "Заказываем выбранное. При необходимости я координирую доставки, сборку и установку, а в финале помогаю подготовить интерьер к съёмке.",
         image: {
             src: transformImage,
-            alt: "Expert measuring distance",
+            alt: "Обустройство и финальная подготовка готового интерьера",
         },
     },
 ];
@@ -41,8 +41,10 @@ const processSteps = [
 <section id="how-it-works" class="process">
     <div class="section-container">
         <div class="process-content">
-            <span class="section-tag">HOW IT WORKS</span>
-            <h2 class="section-title">How we bring your space to life.</h2>
+            <span class="section-tag">КАК Я РАБОТАЮ</span>
+            <h2 class="section-title">
+                От первой встречи до готовой квартиры.
+            </h2>
             <div class="process-steps">
                 {
                     processSteps.map((step) => (

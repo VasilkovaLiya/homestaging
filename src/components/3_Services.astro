@@ -1,0 +1,208 @@
+---
+import BaseSwiper from "./BaseSwiper.astro";
+import { Image } from "astro:assets";
+import sarahJohnsonImage from "/src/assets/images/sarah-johnson.jpg";
+import emmaImage from "/src/assets/images/emma.jpg";
+
+const services = [
+    {
+        id: 1,
+        client: {
+            name: "Освежить интерьер",
+            location: "Когда основное уже есть",
+            image: sarahJohnsonImage,
+        },
+        content:
+            "Если квартира уже обставлена, но выглядит безлико или незаконченно, помогу сделать интерьер более цельным и привлекательным. Подберу свет, текстиль, декор, зеркала и отдельные предметы мебели — от списка покупок до заказа и установки.",
+    },
+    {
+        id: 2,
+        client: {
+            name: "Обустроить квартиру после ремонта",
+            location: "От пустого помещения — к готовому интерьеру",
+            image: emmaImage,
+        },
+        content:
+            "Если ремонт уже закончен, помогу полностью обустроить квартиру с учётом пространства и бюджета. Подберу мебель, свет, текстиль, технику и декор. При необходимости возьму на себя заказы, доставку и контроль установки.",
+    },
+    {
+        id: 3,
+        client: {
+            name: "Подготовить квартиру к сдаче",
+            location: "Полная комплектация для аренды",
+            image: sarahJohnsonImage,
+        },
+        content:
+            "Подготовлю квартиру к долгосрочной или посуточной аренде — от мебели и техники до посуды, текстиля, белья и необходимых бытовых мелочей. В результате квартира будет готова к заселению и фотосъёмке.",
+    },
+];
+---
+
+<section id="services" class="services">
+    <div class="section-container">
+        <span class="section-tag">УСЛУГИ</span>
+        <h2 class="section-title">
+            От небольшого обновления до полностью готовой квартиры.
+        </h2>
+
+        <BaseSwiper sliderName="services" navigation={false}>
+            {
+                services.map((service) => (
+                    <div class="swiper-slide services-slide">
+                        <article class="service-card">
+                            <div class="service-header">
+                                <div class="service-image">
+                                    <Image
+                                        class="media"
+                                        src={
+                                            service.client
+                                                .image as ImageMetadata
+                                        }
+                                        alt={service.client.name}
+                                        width={160}
+                                        height={160}
+                                    />
+                                </div>
+
+                                <div class="client-info">
+                                    <cite class="client-name">
+                                        {service.client.name}
+                                    </cite>
+
+                                    <span class="client-location">
+                                        {service.client.location}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <blockquote class="service-content">
+                                <p>{service.content}</p>
+                            </blockquote>
+                        </article>
+                    </div>
+                ))
+            }
+        </BaseSwiper>
+    </div>
+</section>
+
+<style>
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        transition: all var(--transition-long);
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        height: 100%;
+        max-width: 23rem;
+    }
+
+    .service-header {
+        display: flex;
+        align-items: center;
+        gap: var(--px-16);
+        margin-block: var(--px-32) var(--px-24);
+    }
+
+    .service-image {
+        width: var(--px-80);
+        height: var(--px-80);
+        overflow: hidden;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .client-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-4);
+    }
+
+    .client-name {
+        font-size: var(--text-xl);
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    .services-swiper.-non-slider .swiper-pagination {
+        display: none;
+    }
+
+    @media screen and (max-width: 48rem) {
+        .swiper-slide {
+            opacity: 0;
+            transform: scale(0.75);
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .swiper-slide-prev,
+        .swiper-slide-next {
+            opacity: 0;
+            transform: scale(0.75);
+        }
+
+        .service-header {
+            padding: var(--px-16);
+        }
+
+        .service-content {
+            padding: var(--px-16);
+        }
+    }
+</style>
+
+<script>
+    import { initSwiper } from "@utils/initSwiper";
+
+    const initServicesSlider = () => {
+        const servicesSwiper = initSwiper("services", {
+            pagination: {
+                el: ".services-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                320: { slidesPerView: 1, spaceBetween: 16 },
+                768: { slidesPerView: 2, spaceBetween: 96 },
+                872: { slidesPerView: 2, spaceBetween: 76 },
+                1200: { slidesPerView: 3, spaceBetween: 76, loop: false },
+            },
+            on: {
+                resize: function (swiper) {
+                    if (1200 <= window.innerWidth) {
+                        swiper.disable();
+                        swiper.el.classList.add("-non-slider");
+                    } else {
+                        swiper.enable();
+                        swiper.el.classList.remove("-non-slider");
+                    }
+                },
+            },
+        });
+
+        return () => {
+            servicesSwiper.destroy();
+        };
+    };
+
+    let cleanup = initServicesSlider();
+
+    document.addEventListener("astro:after-swap", () => {
+        if (cleanup) cleanup();
+        cleanup = initServicesSlider();
+    });
+</script>

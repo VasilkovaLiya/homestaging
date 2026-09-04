@@ -1,20 +1,21 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import HeroSection from '@components/HeroSection.astro';
-import AboutSection from '@components/AboutSection.astro';
-import HowItWorksSection from '@components/HowItWorksSection.astro';
-import PortfolioSection from '@components/PortfolioSection.astro';
-import TestimonialsSection from '@components/TestimonialsSection.astro';
-import ContactUsSection from '@components/ContactUsSection.astro';
-import FAQ from '@components/FAQ.astro';
+import Hero from '@components/1_Hero.astro';
+import MyDesigns from '@components/2_My_designs.astro';
+import Services from '@components/3_Services.astro';
+import HowItWorks from '@components/4_How_it_works.astro';
+import About from '@components/5_About.astro';
+import FAQ from '@components/7_FAQ.astro';
+import Contacts from '@components/8_Contacts.astro';
+
 ---
 
 <BaseLayout>
-  <HeroSection />
-  <PortfolioSection />
-  <TestimonialsSection />
-  <HowItWorksSection />
-  <AboutSection />
+  <Hero />
+  <MyDesigns />
+  <Services />
+  <HowItWorks />
+  <About />
   <FAQ />
-  <ContactUsSection />
+  <Contacts />
 </BaseLayout>

@@ -1,0 +1,65 @@
+<section id="contact" class="contact">
+    <div class="section-container contact-container">
+      <span class="section-tag">КОНТАКТЫ</span>
+  
+      <h2 class="section-title">
+        Расскажите мне о своей квартире.
+      </h2>
+  
+      <p class="contact-text">
+        Пришлите несколько фотографий и коротко опишите задачу.
+        Обсудим квартиру, желаемый результат и подходящий формат работы.
+      </p>
+  
+      <div class="contact-actions">
+        <a
+          href="https://t.me/YOUR_USERNAME"
+          class="btn btn--primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TELEGRAM
+        </a>
+  
+        <a
+          href="YOUR_MAX_LINK"
+          class="btn btn--secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          MAX
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .contact-text {
+      max-width: 37.5rem;
+      margin-bottom: var(--px-32);
+    }
+  
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--px-16);
+    }
+  
+    @media screen and (max-width: 35rem) {
+      .contact-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+  
+      .contact-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>

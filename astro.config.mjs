@@ -17,13 +17,41 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.local(),
-      name: "DMSans",
-      cssVariable: "--font-dm-sans",
+      name: "Montserrat",
+      cssVariable: "--font-montserrat",
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/DMSans.woff2"],
-            weight: "normal",
+            src: ["./src/assets/fonts/montserrat-v31-cyrillic_latin-regular.woff2"],
+            weight: "400",
+            style: "normal",
+            display: "swap",
+          },
+          {
+            src: ["./src/assets/fonts/montserrat-v31-cyrillic_latin-500.woff2"],
+            weight: "500",
+            style: "normal",
+            display: "swap",
+          },
+          {
+            src: ["./src/assets/fonts/montserrat-v31-cyrillic_latin-800.woff2"],
+            weight: "800",
+            style: "normal",
+            display: "swap",
+          },
+         
+        ],
+      },
+    },
+    {
+      provider: fontProviders.local(),
+      name: "Manrope",
+      cssVariable: "--font-manrope",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/manrope-v20-cyrillic_latin-800.woff2"],
+            weight: "800",
             style: "normal",
             display: "swap",
           },

@@ -29,7 +29,7 @@ p {
 
 .section-tag {
   display: inline-block;
-  margin-bottom: var(--px-24);
+  margin-bottom: var(--px-16);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   font-weight: 500;
@@ -40,13 +40,13 @@ p {
   margin-bottom: var(--px-64);
   font-size: clamp(1.75rem, 2.5vw + var(--text-lg), 3.25rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.1;
   color: var(--color-text-primary);
 }
 
 .section-subtitle {
   font-size: var(--text-xl);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: var(--px-16);
 }
 
@@ -56,6 +56,8 @@ p {
 
 .btn {
   display: flex;
+  font-family: var(--font-manrope);
+  font-style: italic;
   align-items: center;
   justify-content: center;
   padding: var(--px-16) var(--px-32);
@@ -69,7 +71,7 @@ p {
   border-radius: var(--px-4);
   font-size: var(--text-xs);
   letter-spacing: 0.085em;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
   overflow: hidden;
   z-index: 1;

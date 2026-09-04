@@ -12,21 +12,21 @@ const projects = [
         images: {
             before: {
                 src: before1Image,
-                alt: "Unfinished, under renovation with construction tools, exposed wiring, and partially installed marble-patterned tiles.",
+                alt: "Студия до обустройства: готовый ремонт, пустое пространство без мебели, текстиля и декора.",
             },
             after: {
                 src: after1Image,
-                alt: "A modern, open-concept living space with a wooden table, chairs, and a metal staircase. The room is lit by ceiling lights and natural sunlight from large windows.",
+                alt: "Готовая студия после обустройства: мебель, освещение, текстиль, техника и декор.",
             },
         },
         info: {
             challenge: {
-                title: "Client's Challenge",
-                text: "We wanted to transform our unfinished space into a modern, functional home with an open-concept design that maximizes space, brings in plenty of natural light, and fits seamlessly into our daily lives.",
+                title: "Задача",
+                text: "Полностью обустроить небольшую студию после ремонта и подготовить её к аренде. Важно было сохранить разумный бюджет, не перегрузить пространство и сделать квартиру удобной для повседневной жизни.",
             },
             result: {
-                title: "Result",
-                text: "Our home now feels more open and airy. The transformation has expanded our living area, making every room feel larger and brighter. With a design that prioritizes natural light, our home is now perfectly set up for everyday living and family moments.",
+                title: "Что изменилось",
+                text: "Подобраны мебель, освещение, текстиль, техника, декор и бытовое наполнение. В результате пустое помещение превратилось в цельную, функциональную квартиру, полностью готовую к заселению.",
             },
         },
     },
@@ -35,21 +35,21 @@ const projects = [
         images: {
             before: {
                 src: before2Image,
-                alt: "An older kitchen with white cabinets, beige tile flooring, and white appliances.",
+                alt: "Квартира до обновления интерьера: базовая мебель и готовый ремонт без единого визуального оформления.",
             },
             after: {
                 src: after2Image,
-                alt: "A modern kitchen with dark wood cabinets, stainless steel appliances, and a stone backsplash.",
+                alt: "Квартира после обновления: оформленный интерьер с текстилем, светом, декором и дополнительной мебелью.",
             },
         },
         info: {
             challenge: {
-                title: "Client's Challenge",
-                text: "Our kitchen felt outdated. The all-white design was plain, and the layout wasn't as functional as it could be. We wanted a space with better lighting that made cooking more enjoyable.",
+                title: "Задача",
+                text: "Сделать уже готовый интерьер более цельным и выразительным без нового ремонта и полной замены мебели. Нужно было добавить недостающие детали и сохранить функциональность пространства.",
             },
             result: {
-                title: "Result",
-                text: "Now, our kitchen feels completely renewed. The improved lighting makes the space brighter and more welcoming, while the new wood-style elements fit perfectly with our vision.",
+                title: "Что изменилось",
+                text: "Интерьер дополнен текстилем, светом, декором и отдельными предметами мебели. За счёт небольших изменений пространство стало уютнее, визуально собраннее и привлекательнее на фотографиях.",
             },
         },
     },
@@ -58,8 +58,9 @@ const projects = [
 
 <section id="portfolio" class="portfolio">
     <div class="section-container">
-        <span class="section-tag">PORTFOLIO</span>
-        <h2 class="section-title">See the transformation.</h2>
+        <span class="section-tag">МОИ ИНТЕРЬЕРЫ</span>
+        <h2 class="section-title">Посмотрите, как меняется пространство.</h2>
+
         <BaseSwiper sliderName="portfolio" beforeAfter>
             {
                 projects.map((project) => (
@@ -81,6 +82,7 @@ const projects = [
                                 aria-hidden="false"
                             />
                         </div>
+
                         <div class="project-info">
                             <div class="info-section">
                                 <h3 class="section-subtitle info-title">
@@ -90,6 +92,7 @@ const projects = [
                                     {project.info.challenge.text}
                                 </p>
                             </div>
+
                             <div class="info-section">
                                 <h3 class="section-subtitle info-title">
                                     {project.info.result.title}
@@ -246,17 +249,24 @@ const projects = [
             const view = btn.dataset.view;
             const currentSlide =
                 portfolioSwiper.slides[portfolioSwiper.activeIndex];
-            if (currentSlide && view) updateSlideView(view, currentSlide);
+
+            if (currentSlide && view) {
+                updateSlideView(view, currentSlide);
+            }
         });
 
         portfolioSwiper.on("slideChangeTransitionStart", () => {
             const activeSlide =
                 portfolioSwiper.slides[portfolioSwiper.activeIndex];
-            if (activeSlide) updateSlideView("after", activeSlide);
+
+            if (activeSlide) {
+                updateSlideView("after", activeSlide);
+            }
 
             document
                 .querySelector(".toggle-btn.active")
                 ?.classList.remove("active");
+
             document
                 .querySelector('.toggle-btn[data-view="after"]')
                 ?.classList.add("active");
