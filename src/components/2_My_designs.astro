@@ -5,10 +5,6 @@ import before1Image from "/src/assets/images/студия 353 _2.png";
 import after1Image from "/src/assets/images/студия 353 _1.png";
 import before2Image from "/src/assets/images/студия 354_2.png";
 import after2Image from "/src/assets/images/студия 354_1.png";
-import vanityImage from "/src/assets/images/туалетный столик.png";
-import storageImage from "/src/assets/images/студия 354_1.png";
-import corkBoardImage from "/src/assets/images/студия 354_1.png";
-import bathroomImage from "/src/assets/images/студия 354_1.png";
 
 const projects = [
     {
@@ -59,55 +55,7 @@ const projects = [
     },
 ];
 
-const details = [
-    {
-        id: 1,
-        image: {
-            src: vanityImage,
-            alt: "Туалетный столик с ярким креслом в оформленном интерьере.",
-        },
-        info: {
-            title: "Не боюсь цвета",
-            text: "Яркий акцент может собрать весь интерьер. А мебель нужного размера можно сделать на заказ — так пространство используется по максимуму, а всё необходимое помещается внутри.",
-        },
-    },
 
-    {
-        id: 2,
-        image: {
-            src: bathroomImage,
-            alt: "Продуманная система хранения в ванной комнате.",
-        },
-        info: {
-            title: "Хранение под привычки хозяев",
-            text: "Продумываю не просто место для хранения, а то, чем действительно будут пользоваться: высокие флаконы, небольшие баночки, полотенца и бытовые мелочи.",
-        },
-    },
-
-    {
-        id: 3,
-        image: {
-            src: corkBoardImage,
-            alt: "Пробковая доска как функциональный элемент оформления стены.",
-        },
-        info: {
-            title: "Стены тоже могут быть живыми",
-            text: "Необязательно заполнять их только картинами и постерами. Иногда функциональная вещь может стать частью интерьера — и меняться вместе с вами.",
-        },
-    },
-
-    {
-        id: 4,
-        image: {
-            src: storageImage,
-            alt: "Сочетание графитового шкафа и белого стеллажа в интерьере.",
-        },
-        info: {
-            title: "Сочетаю, а не комплектую",
-            text: "Мебель из разных коллекций может выглядеть цельно. Главное — найти связь в цвете, пропорциях и деталях и не потерять функциональность.",
-        },
-    },
-];
 ---
 
 <section id="portfolio" class="portfolio">
@@ -159,42 +107,12 @@ const details = [
                     </div>
                 ))
             }
-        </BaseSwiper>
-        <p class="middle-text">Цвет, хранение, мебель нужного размера и оформление стен — иногда именно детали делают пространство удобным и цельным.</p>
-        <BaseSwiper sliderName="details">
-            {
-                details.map((detail) => (
-                    <div class="swiper-slide">
-                         <div class="detail-info">
-                            <h3 class="section-subtitle detail-title">
-                                {detail.info.title}
-                            </h3>
-        
-                            <p class="detail-text">
-                                {detail.info.text}
-                            </p>
-                        </div>
-                        <div class="detail-image">
-                            <Image
-                                class="image"
-                                src={detail.image.src}
-                                alt={detail.image.alt}
-                                width={1144}
-                                height={1200}
-                            />
-                        </div>
-        
-                       
-                    </div>
-                ))
-            }
-        </BaseSwiper>
+        </BaseSwiper>       
     </div>
 </section>
 
 <style>
-    :global(.portfolio-swiper),
-    :global(.details-swiper) {
+    :global(.portfolio-swiper) {
         padding-inline: var(--px-64);
         position: relative;
     }
@@ -225,12 +143,7 @@ const details = [
     overflow: hidden;
 }
 
-.detail-image {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-}
+
 
     .project-image .image {
         position: absolute;
@@ -247,16 +160,8 @@ const details = [
         opacity: 1;
     }
 
-    .detail-image .image {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .project-info,
-    .detail-info {
+  
+    .project-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -304,9 +209,7 @@ const details = [
             gap: var(--px-32);
         }
     }
-    .middle-text {
-        margin-block: var(--px-64) var(--px-64);
-    }
+    
 </style>
 
 <script>
@@ -325,17 +228,7 @@ const details = [
             },
         });
 
-        const detailsSwiper = initSwiper("details", {
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".details-next",
-                prevEl: ".details-prev",
-            },
-            pagination: {
-                el: ".details-pagination",
-                clickable: true,
-            },
-        });
+        
 
         const updateSlideView = (view: string, slide: HTMLElement) => {
             const images = slide.querySelectorAll(".image");
@@ -390,7 +283,6 @@ const details = [
 
         return () => {
             portfolioSwiper.destroy();
-            detailsSwiper.destroy();
         };
     }
 
