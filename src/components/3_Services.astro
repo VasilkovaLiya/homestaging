@@ -2,6 +2,7 @@
 import BaseSwiper from "./BaseSwiper.astro";
 import { Image } from "astro:assets";
 import sarahJohnsonImage from "/src/assets/images/sarah-johnson.jpg";
+import testIcon from "/src/assets/images/test-icon.png";
 import emmaImage from "/src/assets/images/emma.jpg";
 
 const services = [
@@ -10,7 +11,7 @@ const services = [
         client: {
             name: "Освежить интерьер",
             location: "Когда основное уже есть",
-            image: sarahJohnsonImage,
+            image: testIcon,
         },
         content:
             "Если квартира уже обставлена, но выглядит безлико или незаконченно, помогу сделать интерьер более цельным и привлекательным. Подберу свет, текстиль, декор, зеркала и отдельные предметы мебели — от списка покупок до заказа и установки.",
@@ -20,7 +21,7 @@ const services = [
         client: {
             name: "Обустроить квартиру после ремонта",
             location: "От пустого помещения — к готовому интерьеру",
-            image: emmaImage,
+            image: testIcon,
         },
         content:
             "Если ремонт уже закончен, помогу полностью обустроить квартиру с учётом пространства и бюджета. Подберу мебель, свет, текстиль, технику и декор. При необходимости возьму на себя заказы, доставку и контроль установки.",
@@ -30,7 +31,7 @@ const services = [
         client: {
             name: "Подготовить квартиру к сдаче",
             location: "Полная комплектация для аренды",
-            image: sarahJohnsonImage,
+            image: testIcon,
         },
         content:
             "Подготовлю квартиру к долгосрочной или посуточной аренде — от мебели и техники до посуды, текстиля, белья и необходимых бытовых мелочей. В результате квартира будет готова к заселению и фотосъёмке.",
@@ -42,7 +43,7 @@ const services = [
     <div class="section-container">
         <span class="section-tag">УСЛУГИ</span>
         <h2 class="section-title">
-            От небольшого обновления до полностью готовой квартиры.
+            От небольшого обновления до полностью готовой квартиры
         </h2>
 
         <BaseSwiper sliderName="services" navigation={false}>

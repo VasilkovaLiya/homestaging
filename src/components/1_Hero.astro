@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import HeroImage from "/src/assets/images/hero_section.jpg";
+import HeroImage from "/src/assets/images/selfy.png";
+
 
 ---
 
@@ -46,7 +47,7 @@ import HeroImage from "/src/assets/images/hero_section.jpg";
             </div>
         </div>
         <div class="img-wrapper">
-            <Image src={HeroImage} alt="Design" width={500} height={650} />
+            <Image src={HeroImage} alt="Hero" width={500} height={650} />
         </div>
     </div>
 </section>
@@ -69,9 +70,12 @@ import HeroImage from "/src/assets/images/hero_section.jpg";
 
     .hero-title {
         margin-bottom: var(--px-28);
-        font-size: clamp(2.125rem, 6vw, var(--text-xxl));
-        font-weight: 500;
+        font-size: clamp(2.125rem, 6vw, var(--text-6xl));        
         line-height: 1;
+        text-transform: uppercase;
+        font-family: var(--font-unbounded);
+        letter-spacing: 0.05em;
+        font-weight: 800;
     }
 
     .hero-subtitle {

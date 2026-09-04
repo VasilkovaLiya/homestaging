@@ -39,7 +39,9 @@ p {
 .section-title {
   margin-bottom: var(--px-64);
   font-size: clamp(1.75rem, 2.5vw + var(--text-lg), 3.25rem);
-  font-weight: 500;
+  font-family: var(--font-unbounded);
+  letter-spacing: 0.05em;
+  font-weight: 800;
   line-height: 1.1;
   color: var(--color-text-primary);
 }
@@ -53,11 +55,14 @@ p {
 .no-scroll {
   overflow: hidden;
 }
-
+.logo {
+  color: var(--color-accent);
+}
 .btn {
   display: flex;
-  font-family: var(--font-manrope);
-  font-style: italic;
+  font-family: var(--font-unbounded);
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
   align-items: center;
   justify-content: center;
   padding: var(--px-16) var(--px-32);
@@ -67,6 +72,18 @@ p {
 
 .btn--primary {
   background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--px-4);
+  font-size: var(--text-xs);
+  letter-spacing: 0.085em;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform var(--transition-short);
+}
+ .btn--colorful { 
+  background-color: var(--color-accent);
   color: var(--color-white);
   border-radius: var(--px-4);
   font-size: var(--text-xs);

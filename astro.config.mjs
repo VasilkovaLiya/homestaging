@@ -42,22 +42,22 @@ export default defineConfig({
          
         ],
       },
-    },
+    },   
     {
       provider: fontProviders.local(),
-      name: "Manrope",
-      cssVariable: "--font-manrope",
+      name: "Unbounded",
+      cssVariable: "--font-unbounded",
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/manrope-v20-cyrillic_latin-800.woff2"],
-            weight: "800",
+            src: ["./src/assets/fonts/unbounded-v12-cyrillic_latin-500.woff2"],
+            weight: "500",
             style: "normal",
             display: "swap",
           },
         ],
       },
-    },
+    }
   ],
 
   integrations: [sitemap(), favicons()],
