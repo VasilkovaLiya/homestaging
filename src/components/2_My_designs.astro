@@ -1,113 +1,206 @@
 ---
 import BaseSwiper from "./BaseSwiper.astro";
 import { Image } from "astro:assets";
+
 import before1Image from "/src/assets/images/студия 353 _2.png";
 import after1Image from "/src/assets/images/студия 353 _1.png";
-import before2Image from "/src/assets/images/студия 354_2.png";
+
+import vanityImage from "/src/assets/images/туалетный столик.png";
+import hallImage from "/src/assets/images/hall.png";
+import corkBoardImage from "/src/assets/images/доска.png";
+
 import after2Image from "/src/assets/images/студия 354_1.png";
 
-const projects = [
+import before2Image from "/src/assets/images/студия 354_2.png";
+import bathroomImage from "/src/assets/images/bathroom_detai.jpg";
+
+
+const slides = [
     {
         id: 1,
-        images: {
-            before: {
-                src: before1Image,
-                alt: "Студия до обустройства: готовый ремонт, пустое пространство без мебели, текстиля и декора.",
+        type: "transformation",
+        title: "Из пустого пространства — в готовый интерьер",
+        items: [
+            {
+                image: before1Image,
+                label: "До",
+                text: "Готовый ремонт без мебели, текстиля и бытового наполнения.",
+                alt: "Студия до обустройства: пустое помещение после ремонта.",
             },
-            after: {
-                src: after1Image,
-                alt: "Готовая студия после обустройства: мебель, освещение, текстиль, техника и декор.",
+            {
+                image: after1Image,
+                label: "После",
+                text: "Полностью оборудованная студия, готовая к аренде и заселению.",
+                alt: "Студия после обустройства: мебель, текстиль, освещение и декор.",
             },
-        },
-        info: {
-            challenge: {
-                title: "Задача",
-                text: "Полностью обустроить небольшую студию после ремонта и подготовить её к аренде. Важно было сохранить разумный бюджет, не перегрузить пространство и сделать квартиру удобной для повседневной жизни.",
-            },
-            result: {
-                title: "Что изменилось",
-                text: "Подобраны мебель, освещение, текстиль, техника, декор и бытовое наполнение. В результате пустое помещение превратилось в цельную, функциональную квартиру, полностью готовую к заселению.",
-            },
-        },
+        ],
     },
+
     {
         id: 2,
-        images: {
-            before: {
-                src: before2Image,
-                alt: "Квартира до обновления интерьера: базовая мебель и готовый ремонт без единого визуального оформления.",
+        type: "gallery",
+        items: [
+            {
+                image: hallImage,
+                orientation: "landscape",
+                text: "Спокойная композиция, где функциональные детали становятся частью интерьера.",
+                alt: "Деталь оформленного интерьера.",
             },
-            after: {
-                src: after2Image,
-                alt: "Квартира после обновления: оформленный интерьер с текстилем, светом, декором и дополнительной мебелью.",
+            {
+                image: vanityImage,
+                orientation: "portrait",
+                text: "Текстиль, свет и небольшие акценты делают пространство визуально завершённым.",
+                alt: "Интерьерная композиция с текстилем и декором.",
             },
-        },
-        info: {
-            challenge: {
-                title: "Задача",
-                text: "Сделать уже готовый интерьер более цельным и выразительным без нового ремонта и полной замены мебели. Нужно было добавить недостающие детали и сохранить функциональность пространства.",
+        ],
+    },
+
+    {
+        id: 3,
+        type: "transformation",
+        title: "Когда интерьеру не нужен новый ремонт",
+        items: [
+            {
+                image: before2Image,
+                label: "До",
+                text: "Готовое пространство с базовым наполнением и разрозненными деталями.",
+                alt: "Интерьер до обновления.",
             },
-            result: {
-                title: "Что изменилось",
-                text: "Интерьер дополнен текстилем, светом, декором и отдельными предметами мебели. За счёт небольших изменений пространство стало уютнее, визуально собраннее и привлекательнее на фотографиях.",
+            {
+                image: after2Image,
+                label: "После",
+                text: "Более цельный интерьер за счёт света, текстиля, мебели и декора.",
+                alt: "Интерьер после обновления.",
             },
-        },
+        ],
+    },
+
+    {
+        id: 4,
+        type: "gallery",
+        items: [
+            {
+                image: corkBoardImage,
+                orientation: "portrait",
+                text: "Небольшие предметы помогают собрать интерьер без ощущения перегруженности.",
+                alt: "Деталь авторского оформления интерьера.",
+            },
+            {
+                image: hallImage,
+                orientation: "landscape",
+                text: "Функциональное пространство может оставаться уютным и визуально лёгким.",
+                alt: "Авторская интерьерная фотография.",
+            },
+        ],
+    },
+    {
+        id: 5,
+        type: "gallery",
+        items: [
+            {
+                image: bathroomImage,
+                orientation: "portrait",
+                text: "Небольшие предметы помогают собрать интерьер без ощущения перегруженности.",
+                alt: "Деталь авторского оформления интерьера.",
+            },
+            {
+                image: hallImage,
+                orientation: "landscape",
+                text: "Функциональное пространство может оставаться уютным и визуально лёгким.",
+                alt: "Авторская интерьерная фотография.",
+            },
+        ],
     },
 ];
-
-
 ---
 
 <section id="portfolio" class="portfolio">
     <div class="section-container">
-        <span class="section-tag">МОИ ИНТЕРЬЕРЫ</span>
-        <h2 class="section-title">Посмотрите, как меняется пространство</h2>
+        <span class="section-tag">МОИ ИНТЕРЬЕРЫ.Фото</span>
 
-        <BaseSwiper sliderName="portfolio" beforeAfter>
+        <h2 class="section-title">
+            Посмотрите, как меняется пространство
+        </h2>
+
+        <BaseSwiper sliderName="portfolio">
             {
-                projects.map((project) => (
-                    <div class="swiper-slide">
-                        <div class="project-image">
-                            <Image
-                                class="image before"
-                                src={project.images.before.src}
-                                alt={project.images.before.alt}
-                                width={800}
-                                aria-hidden="true"
-                            />
-                            <Image
-                                class="image after active"
-                                src={project.images.after.src}
-                                alt={project.images.after.alt}
-                                width={1144}
-                                height={800}
-                                aria-hidden="false"
-                            />
-                        </div>
-
-                        <div class="project-info">
-                            <div class="info-section">
-                                <h3 class="section-subtitle info-title">
-                                    {project.info.challenge.title}
+                slides.map((slide) => (
+                    <div
+                        class={`swiper-slide portfolio-slide portfolio-slide--${slide.type}`}
+                    >
+                        {
+                            slide.title && (
+                                <h3 class="section-subtitle slide-title">
+                                    {slide.title}
                                 </h3>
-                                <p class="info-text">
-                                    {project.info.challenge.text}
-                                </p>
-                            </div>
+                            )
+                        }
 
-                            <div class="info-section">
-                                <h3 class="section-subtitle info-title">
-                                    {project.info.result.title}
-                                </h3>
-                                <p class="info-text">
-                                    {project.info.result.text}
-                                </p>
-                            </div>
+                        <div class="slide-content">
+                            {
+                                slide.items.map((item, index) => (
+                                    <figure
+                                        class:list={[
+                                            "portfolio-item",
+
+                                            slide.type === "transformation" &&
+                                                index === 0 &&
+                                                "portfolio-item--before",
+
+                                            slide.type === "transformation" &&
+                                                index === 1 &&
+                                                "portfolio-item--after",
+
+                                            slide.type === "gallery" &&
+                                                item.orientation &&
+                                                `portfolio-item--${item.orientation}`,
+                                        ]}
+                                    >
+                                        {/* <div class="portfolio-image">
+                                            <Image
+                                                class="image"
+                                                src={item.image}
+                                                alt={item.alt}
+                                                width={900}
+                                            />
+
+                                            {
+                                                item.label && (
+                                                    <span class="image-label">
+                                                        {item.label}
+                                                    </span>
+                                                )
+                                            }
+                                        </div> */}
+                                        <div class="portfolio-image">
+                                            <img
+                                                class="image"
+                                                src={item.image.src}
+                                                alt={item.alt}
+                                            />
+
+                                            {
+                                                item.label && (
+                                                    <span class="image-label">
+                                                        {item.label}
+                                                    </span>
+                                                )
+                                            }
+                                        </div>
+
+                                        <figcaption class="item-caption">
+                                            <p class="info-text">
+                                                {item.text}
+                                            </p>
+                                        </figcaption>
+                                    </figure>
+                                ))
+                            }
                         </div>
                     </div>
                 ))
             }
-        </BaseSwiper>       
+        </BaseSwiper>
     </div>
 </section>
 
@@ -117,19 +210,16 @@ const projects = [
         position: relative;
     }
 
-    .swiper-slide {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--px-64);
-        opacity: 0;
-        transform: scale(0.75);
-        transition: all var(--transition-long);
-    }
-
-    .swiper-slide-active {
-        opacity: 1;
-        transform: scale(1);
-    }
+    .portfolio-slide {
+    display: flex;
+    flex-direction: column;
+    gap: var(--px-32);
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        opacity var(--transition-long),
+        transform var(--transition-long);
+}
 
     .swiper-slide-prev,
     .swiper-slide-next {
@@ -137,159 +227,373 @@ const projects = [
         transform: scale(0.75);
     }
 
-    .project-image {
-    position: relative;
-    min-height: 25rem;
-    overflow: hidden;
-}
-
-
-
-    .project-image .image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity var(--transition-long);
-    }
-
-    .project-image .image.active {
-        opacity: 1;
-    }
-
-  
-    .project-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--px-32);
-    }
-
-    .info-section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--px-16);
-    }
-
-    .info-title {
+    .slide-title {
         margin-bottom: 0;
     }
 
-    .view-details {
-        display: inline-flex;
-        font-weight: 500;
-        margin-top: auto;
+    .slide-content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--px-32);
+        align-items: start;
     }
 
-    .btn--secondary {
-        border-bottom: var(--px-2) solid currentColor;
+    .portfolio-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-16);
+        margin: 0;
+        min-width: 0;
     }
 
-    .btn--secondary-hovered {
+    .portfolio-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /*
+        Transformation
+
+    */
+
+    .portfolio-slide--transformation .portfolio-image {
+        min-height: 25rem;
+    }
+
+    .portfolio-slide--transformation .portfolio-image .image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         display: block;
     }
 
+    .image-label {
+        position: absolute;
+        left: var(--px-16);
+        top: var(--px-16);
+        z-index: 1;
+        padding: var(--px-8) var(--px-16);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(0.25rem);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    /*
+        Gallery
+
+    */
+
+    .portfolio-slide--gallery .slide-content {
+        align-items: start;
+    }
+
+    .portfolio-slide--gallery .portfolio-image {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        min-height: 0;
+    }
+
+    .portfolio-slide--gallery .portfolio-image .image {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+   
+    .portfolio-item--landscape .portfolio-image {
+        width: 100%;
+    }
+
+  
+    .portfolio-item--portrait {
+        align-items: center;
+    }
+
+    .portfolio-item--portrait .portfolio-image {
+        width: 55%;
+        margin-inline: auto;
+    }
+
+    .portfolio-item--portrait .item-caption {
+        width: 55%;
+        margin-inline: auto;
+    }
+
+    .item-caption {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-8);
+    }
+
+    .info-text {
+        margin: 0;
+    }
+
     @media screen and (max-width: 64rem) {
-        .swiper-slide {
-            gap: var(--px-32);
+        .slide-content {
+            gap: var(--px-24);
+        }
+
+        .portfolio-slide {
+            gap: var(--px-24);
+        }
+
+        .portfolio-item--portrait .portfolio-image,
+        .portfolio-item--portrait .item-caption {
+            width: 78%;
         }
     }
 
     @media screen and (max-width: 55rem) {
-        :global(.portfolio-swiper),
-        :global(.details-swiper) {
+        :global(.portfolio-swiper) {
             padding-inline: 0;
         }
 
-        .swiper-slide {
+        .portfolio-slide {
+            gap: var(--px-24);
+        }
+
+        /*
+            GALLERY — mobile
+
+         
+        */
+
+        .portfolio-slide--gallery .slide-content {
             grid-template-columns: 1fr;
             gap: var(--px-32);
         }
+
+        .portfolio-slide--gallery .portfolio-item {
+            width: 100%;
+        }
+
+        .portfolio-slide--gallery
+            .portfolio-item--landscape
+            .portfolio-image {
+            width: 100%;
+        }
+
+        .portfolio-slide--gallery
+            .portfolio-item--landscape
+            .item-caption {
+            width: 100%;
+        }
+
+     
+        .portfolio-slide--gallery
+            .portfolio-item--portrait
+            .portfolio-image {
+            width: 55%;
+            margin-inline: auto;
+        }
+
+        .portfolio-slide--gallery
+            .portfolio-item--portrait
+            .item-caption {
+            width: 55%;
+            margin-inline: auto;
+        }
+
+        /*
+            TRANSFORMATION — mobile
+
+        */
+
+        .portfolio-slide--transformation .slide-content {
+            display: block;
+            position: relative;
+            min-height: 32rem;
+        }
+
+        .portfolio-slide--transformation .portfolio-item {
+            gap: var(--px-12);
+        }
+
+        .portfolio-slide--transformation .portfolio-item--before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 43%;
+            z-index: 2;
+        }
+
+        .portfolio-slide--transformation
+            .portfolio-item--before
+            .portfolio-image {
+            min-height: 11rem;
+        }
+
+        .portfolio-slide--transformation
+            .portfolio-item--before
+            .item-caption {
+            padding-right: var(--px-8);
+        }
+
+        .portfolio-slide--transformation .portfolio-item--after {
+            width: 72%;
+            margin-left: auto;
+            padding-top: var(--px-64);
+        }
+
+        .portfolio-slide--transformation
+            .portfolio-item--after
+            .portfolio-image {
+            min-height: 22rem;
+        }
+
+        .image-label {
+            left: var(--px-12);
+            top: var(--px-12);
+            padding: var(--px-8) var(--px-12);
+        }
     }
-    
+
+    @media screen and (max-width: 36rem) {
+        .portfolio-slide--transformation .slide-content {
+            min-height: 29rem;
+        }
+
+        .portfolio-slide--transformation .portfolio-item--before {
+            width: 45%;
+        }
+
+        .portfolio-slide--transformation
+            .portfolio-item--before
+            .portfolio-image {
+            min-height: 9rem;
+        }
+
+        .portfolio-slide--transformation .portfolio-item--after {
+            width: 74%;
+            padding-top: var(--px-48);
+        }
+
+        .portfolio-slide--transformation
+            .portfolio-item--after
+            .portfolio-image {
+            min-height: 19rem;
+        }
+
+        .portfolio-slide--gallery
+            .portfolio-item--portrait
+            .portfolio-image,
+        .portfolio-slide--gallery
+            .portfolio-item--portrait
+            .item-caption {
+            width: 78%;
+        }
+    }
 </style>
 
 <script>
     import { initSwiper } from "@utils/initSwiper";
 
+    let portfolioSwiper;
+
     function initPortfolioSlider() {
-        const portfolioSwiper = initSwiper("portfolio", {
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".portfolio-next",
-                prevEl: ".portfolio-prev",
-            },
-            pagination: {
-                el: ".portfolio-pagination",
-                clickable: true,
-            },
-        });
+        console.log("[portfolio] init called");
 
-        
+        const slider = document.querySelector(".portfolio-swiper");
+        console.log("[portfolio] slider element:", slider);
 
-        const updateSlideView = (view: string, slide: HTMLElement) => {
-            const images = slide.querySelectorAll(".image");
+        if (!slider) {
+            console.warn("[portfolio] slider not found");
+            return;
+        }
 
-            images.forEach((img) => {
-                if (img.classList.contains(view)) {
-                    img.classList.add("active");
-                    img.setAttribute("aria-hidden", "false");
-                } else {
-                    img.classList.remove("active");
-                    img.setAttribute("aria-hidden", "true");
-                }
+        console.log(
+            "[portfolio] slides before init:",
+            slider.querySelectorAll(".swiper-slide").length
+        );
+
+        console.log(
+            "[portfolio] classes before init:",
+            slider.className
+        );
+
+        if (portfolioSwiper && !portfolioSwiper.destroyed) {
+            console.log("[portfolio] destroying previous swiper");
+            portfolioSwiper.destroy(true, true);
+        }
+
+        try {
+            portfolioSwiper = initSwiper("portfolio", {
+                spaceBetween: 30,
+
+                navigation: {
+                    nextEl: ".portfolio-next",
+                    prevEl: ".portfolio-prev",
+                },
+
+                pagination: {
+                    el: ".portfolio-pagination",
+                    clickable: true,
+                },
+
+                on: {
+                    init(swiper) {
+                        console.log("[portfolio] swiper init event", swiper);
+                    },
+
+                    afterInit(swiper) {
+                        console.log("[portfolio] afterInit", {
+                            initialized: swiper.initialized,
+                            activeIndex: swiper.activeIndex,
+                            realIndex: swiper.realIndex,
+                            width: swiper.width,
+                            height: swiper.height,
+                            slides: swiper.slides.length,
+                        });
+                    },
+
+                    slideChange(swiper) {
+                        console.log("[portfolio] slideChange", {
+                            activeIndex: swiper.activeIndex,
+                            realIndex: swiper.realIndex,
+                        });
+                    },
+                },
             });
-        };
 
-        document.addEventListener("click", (e) => {
-            const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(
-                ".toggle-btn",
+            console.log("[portfolio] swiper instance:", portfolioSwiper);
+
+            console.log("[portfolio] state immediately after init:", {
+                initialized: portfolioSwiper?.initialized,
+                destroyed: portfolioSwiper?.destroyed,
+                activeIndex: portfolioSwiper?.activeIndex,
+                realIndex: portfolioSwiper?.realIndex,
+                width: portfolioSwiper?.width,
+                height: portfolioSwiper?.height,
+                slides: portfolioSwiper?.slides?.length,
+            });
+
+            console.log(
+                "[portfolio] classes after init:",
+                slider.className
             );
-            if (!btn) return;
 
-            document
-                .querySelector(".toggle-btn.active")
-                ?.classList.remove("active");
-            btn.classList.add("active");
-
-            const view = btn.dataset.view;
-            const currentSlide =
-                portfolioSwiper.slides[portfolioSwiper.activeIndex];
-
-            if (currentSlide && view) {
-                updateSlideView(view, currentSlide);
-            }
-        });
-
-        portfolioSwiper.on("slideChangeTransitionStart", () => {
-            const activeSlide =
-                portfolioSwiper.slides[portfolioSwiper.activeIndex];
-
-            if (activeSlide) {
-                updateSlideView("after", activeSlide);
-            }
-
-            document
-                .querySelector(".toggle-btn.active")
-                ?.classList.remove("active");
-
-            document
-                .querySelector('.toggle-btn[data-view="after"]')
-                ?.classList.add("active");
-        });
-
-        return () => {
-            portfolioSwiper.destroy();
-        };
+            console.log(
+                "[portfolio] wrapper transform:",
+                getComputedStyle(
+                    slider.querySelector(".swiper-wrapper")
+                ).transform
+            );
+        } catch (error) {
+            console.error("[portfolio] INIT ERROR:", error);
+        }
     }
 
-    let cleanup = initPortfolioSlider();
-
-    document.addEventListener("astro:after-swap", () => {
-        if (cleanup) cleanup();
-        cleanup = initPortfolioSlider();
+    document.addEventListener("astro:page-load", () => {
+        console.log("[portfolio] astro:page-load");
+        initPortfolioSlider();
     });
 </script>

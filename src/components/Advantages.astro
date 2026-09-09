@@ -1,0 +1,137 @@
+---
+const advantages = [
+    {
+        id: 1,
+        title: "Экономлю ваше время",
+        content:
+            "Поиск мебели и декора, сравнение вариантов, заказы, доставки и установка требуют десятков часов. Я беру эту работу на себя, чтобы подготовка квартиры не растягивалась на недели и месяцы.",
+    },
+    {
+        id: 2,
+        title: "Помогаю не переплачивать",
+        content:
+            "Знаю, где искать мебель, свет, текстиль и декор в разных бюджетах, и уже имею свою базу поставщиков и исполнителей. Подбираю решения исходя из задачи, а не из стоимости бренда.",
+    },
+    {
+        id: 3,
+        title: "Красиво — но прежде всего удобно",
+        content:
+            "Не создаю интерьер ради картинки. Важно, чтобы квартира хорошо выглядела, была функциональной и оставалась удобной для реальной жизни — без ненужных дорогих решений.",
+    },
+    {
+        id: 4,
+        title: "Довожу до готового объявления",
+        content:
+            "Финальный результат важно правильно показать. Помогу подготовить квартиру к съёмке, сфотографировать её и оформить визуальную подачу для объявления.",
+    },
+];
+---
+
+<section id="advantages" class="advantages">
+    <div class="section-container">
+        <span class="section-tag">ПРЕИМУЩЕСТВА</span>
+
+        <h2 class="section-title">
+            Вам не придётся заниматься квартирой по вечерам и выходным
+        </h2>
+
+        <div class="advantages-list">
+            {
+                advantages.map((advantage, index) => (
+                    <article class="advantage-item">
+                        <div
+                            class="advantage-number"
+                            aria-hidden="true"
+                        >
+                            {String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <div class="advantage-content">
+                            <h3 class="advantage-title">
+                                {advantage.title}
+                            </h3>
+
+                            <p class="advantage-text">
+                                {advantage.content}
+                            </p>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .advantages-list {
+        margin-top: var(--px-32);
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .advantage-item {
+        display: grid;
+        grid-template-columns: 6rem minmax(0, 1fr);
+        gap: var(--px-32);
+        padding-block: var(--px-32);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .advantage-number {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 0.9;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        opacity: 0.22;
+    }
+
+    .advantage-content {
+        display: grid;
+        grid-template-columns: minmax(14rem, 0.65fr) minmax(0, 1fr);
+        gap: var(--px-48);
+        align-items: start;
+    }
+
+    .advantage-title {
+        margin: 0;
+        font-size: var(--text-xl);
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    .advantage-text {
+        margin: 0;
+        max-width: 42rem;
+    }
+
+    @media screen and (max-width: 64rem) {
+        .advantage-item {
+            grid-template-columns: 4rem minmax(0, 1fr);
+            gap: var(--px-24);
+        }
+
+        .advantage-content {
+            grid-template-columns: 1fr;
+            gap: var(--px-12);
+        }
+    }
+
+    @media screen and (max-width: 48rem) {
+        .advantages-list {
+            margin-top: var(--px-24);
+        }
+
+        .advantage-item {
+            grid-template-columns: 1fr;
+            gap: var(--px-12);
+            padding-block: var(--px-24);
+        }
+
+        .advantage-number {
+            font-size: 2.25rem;
+        }
+
+        .advantage-content {
+            gap: var(--px-8);
+        }
+    }
+</style>
