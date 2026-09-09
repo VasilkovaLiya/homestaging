@@ -115,12 +115,16 @@ const slides = [
 ---
 
 <section id="portfolio" class="portfolio">
-    <div class="section-container">
-        <span class="section-tag">МОИ ИНТЕРЬЕРЫ.Фото</span>
+     <div class="section-container-wide">
+        <div class="section-container">
+            <span class="section-tag">МОИ ИНТЕРЬЕРЫ</span>
 
         <h2 class="section-title">
             Посмотрите, как меняется пространство
         </h2>
+        </div>
+         
+        
 
         <BaseSwiper sliderName="portfolio">
             {
@@ -128,99 +132,87 @@ const slides = [
                     <div
                         class={`swiper-slide portfolio-slide portfolio-slide--${slide.type}`}
                     >
-                        {
-                            slide.title && (
-                                <h3 class="section-subtitle slide-title">
-                                    {slide.title}
-                                </h3>
-                            )
-                        }
-
-                        <div class="slide-content">
+                        <div class="section-container portfolio-slide-inner">
                             {
-                                slide.items.map((item, index) => (
-                                    <figure
-                                        class:list={[
-                                            "portfolio-item",
-
-                                            slide.type === "transformation" &&
-                                                index === 0 &&
-                                                "portfolio-item--before",
-
-                                            slide.type === "transformation" &&
-                                                index === 1 &&
-                                                "portfolio-item--after",
-
-                                            slide.type === "gallery" &&
-                                                item.orientation &&
-                                                `portfolio-item--${item.orientation}`,
-                                        ]}
-                                    >
-                                        {/* <div class="portfolio-image">
-                                            <Image
-                                                class="image"
-                                                src={item.image}
-                                                alt={item.alt}
-                                                width={900}
-                                            />
-
-                                            {
-                                                item.label && (
-                                                    <span class="image-label">
-                                                        {item.label}
-                                                    </span>
-                                                )
-                                            }
-                                        </div> */}
-                                        <div class="portfolio-image">
-                                            <img
-                                                class="image"
-                                                src={item.image.src}
-                                                alt={item.alt}
-                                            />
-
-                                            {
-                                                item.label && (
-                                                    <span class="image-label">
-                                                        {item.label}
-                                                    </span>
-                                                )
-                                            }
-                                        </div>
-
-                                        <figcaption class="item-caption">
-                                            <p class="info-text">
-                                                {item.text}
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                                ))
+                                slide.title && (
+                                    <h3 class="section-subtitle slide-title">
+                                        {slide.title}
+                                    </h3>
+                                )
                             }
+        
+                            <div class="slide-content">
+                                {
+                                    slide.items.map((item, index) => (
+                                        <figure
+                                            class:list={[
+                                                "portfolio-item",
+        
+                                                slide.type === "transformation" &&
+                                                    index === 0 &&
+                                                    "portfolio-item--before",
+        
+                                                slide.type === "transformation" &&
+                                                    index === 1 &&
+                                                    "portfolio-item--after",
+        
+                                                slide.type === "gallery" &&
+                                                    item.orientation &&
+                                                    `portfolio-item--${item.orientation}`,
+                                            ]}
+                                        >
+                                            <div class="portfolio-image">
+                                                <img
+                                                    class="image"
+                                                    src={item.image.src}
+                                                    alt={item.alt}
+                                                />
+        
+                                                {
+                                                    item.label && (
+                                                        <span class="image-label">
+                                                            {item.label}
+                                                        </span>
+                                                    )
+                                                }
+                                            </div>
+        
+                                            <figcaption class="item-caption">
+                                                <p class="info-text">
+                                                    {item.text}
+                                                </p>
+                                            </figcaption>
+                                        </figure>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 ))
             }
         </BaseSwiper>
-    </div>
+    </div> 
 </section>
 
 <style>
     :global(.portfolio-swiper) {
-        padding-inline: var(--px-64);
         position: relative;
     }
 
     .portfolio-slide {
-    display: flex;
-    flex-direction: column;
-    gap: var(--px-32);
     opacity: 1;
     transform: scale(1);
-    transition:
-        opacity var(--transition-long),
-        transform var(--transition-long);
-}
 
+    transition:
+    opacity var(--transition-long),
+    transform var(--transition-long);
+    }
+
+    .portfolio-slide-inner {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-32);
+    }
     .swiper-slide-prev,
     .swiper-slide-next {
         opacity: 0;
@@ -353,9 +345,7 @@ const slides = [
     }
 
     @media screen and (max-width: 55rem) {
-        :global(.portfolio-swiper) {
-            padding-inline: 0;
-        }
+       
 
         .portfolio-slide {
             gap: var(--px-24);

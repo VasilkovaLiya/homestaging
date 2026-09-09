@@ -213,6 +213,7 @@ import PlantIcon from "/src/components/icons/Plant.astro";
     .hero-benefits-item {
         display: flex;
         align-items: center;
+        color: var(--color-accent);
     }
 
   
@@ -226,8 +227,8 @@ import PlantIcon from "/src/components/icons/Plant.astro";
         content: "|";
 
         margin-inline: var(--px-8);
-
-        opacity: 0.6;
+        font-weight: 500;
+        color: #703627;
     }
 
    
@@ -260,7 +261,7 @@ import PlantIcon from "/src/components/icons/Plant.astro";
         position: absolute;
 
         top: 13%;
-        right: -74px;
+        right: 65%;
 
         display: flex;
         flex-direction: column;
@@ -287,22 +288,15 @@ import PlantIcon from "/src/components/icons/Plant.astro";
    
     .hero-note::after {
         content: "";
-
         position: absolute;
-
         right: 1.1rem;
-        bottom: -3.4rem;
-
-        width: 4.8rem;
-        height: 3.2rem;
-
-        border-right: 1.5px solid var(--color-accent);
-        border-bottom: 1.5px solid var(--color-accent);
-
+        bottom: -5.4rem;
+        width: 5.8rem;
+        height: 6.2rem;
+        border-right: 2px solid #eae2e0;
+        border-bottom: 2px solid #e0cfca;
         border-radius: 0 0 100% 0;
-
-        transform: rotate(14deg);
-
+        transform: rotate(63deg);
         opacity: 0.9;
     }
 
@@ -354,9 +348,6 @@ import PlantIcon from "/src/components/icons/Plant.astro";
             column-gap: var(--px-48);
         }
 
-        .hero-note {
-            right: -2.5rem;
-        }
     }
 
 
@@ -490,7 +481,7 @@ import PlantIcon from "/src/components/icons/Plant.astro";
         .hero-benefits-item {
             display: flex;
             align-items: center;
-
+            color: var(--color-text-secondary);
             gap: var(--px-12);
         }
 

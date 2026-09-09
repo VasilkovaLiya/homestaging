@@ -13,14 +13,16 @@ body {
 }
 
 section {
-  padding: var(--px-96) var(--px-64);
+  margin: var(--px-96) var(--px-64);
 }
 
 p {
   line-height: 1.6;
   opacity: 0.8;
 }
-
+.section-container-wide {
+  margin: 0 auto;
+}
 .section-container {
   width: 100%;
   max-width: 90rem;
@@ -220,7 +222,7 @@ p {
 
 @media screen and (max-width: 64rem) {
   section {
-    padding: var(--px-80) var(--px-28);
+    margin: var(--px-80) var(--px-28);
   }
 
   .section-title {
@@ -230,7 +232,7 @@ p {
 
 @media screen and (max-width: 42.188rem) {
   section {
-    padding: var(--px-64) var(--px-20);
+    margin: var(--px-64) var(--px-20);
   }
 
   .section-tag {
