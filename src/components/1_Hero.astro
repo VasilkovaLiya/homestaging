@@ -1,54 +1,115 @@
 ---
 import { Image } from "astro:assets";
 import HeroImage from "/src/assets/images/selfy.png";
-
-
+import VaseIcon from "/src/components/icons/Vase1.astro";
+import Vase2Icon from "/src/components/icons/Vase2.astro";
+import CactusIcon from "/src/components/icons/Cactus.astro";
+import PlantIcon from "/src/components/icons/Plant.astro";
 ---
 
 <section id="hero" class="hero">
     <div class="section-container hero-container">
-        <div>
-            <span class="section-tag">ОБУСТРОЙСТВО • КОМПЛЕКТАЦИЯ • ХОУМСТЕЙДЖИНГ</span>
-            <h1 class="hero-title">Готовлю квартиры к аренде и продаже</h1>
-            <p class="hero-subtitle">
-                Помогу сделать квартиру привлекательнее для арендаторов и покупателей, выгодно выделить её среди других предложений и подготовить к выходу на рынок
-            </p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn--primary"
-                    >Обсудить квартиру</a
-                >
-                <a href="#how-it-works" class="btns--secondary">
-                    <span class="btn--secondary btn--secondary-unhovered">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 384 512"
-                            ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path
-                                d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
-                            ></path>
-                        </svg>
-                        Как я работаю
-                    </span>
-                    <span
-                        class="btn--secondary btn--secondary-hovered"
-                        aria-hidden="true"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 384 512"
-                            ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path
-                                d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
-                            ></path>
-                        </svg>
-                        Как я работаю
-                    </span>
-                </a>
+
+        <span class="section-tag hero-tag">
+            ОБУСТРОЙСТВО • КОМПЛЕКТАЦИЯ • ХОУМСТЕЙДЖИНГ
+        </span>
+
+        <h1 class="hero-title">
+            Готовлю квартиры к аренде и продаже
+        </h1>
+
+        <div class="hero-portrait">
+            <div class="hero-portrait-image">
+                <Image
+                    src={HeroImage}
+                    alt="Лия Василькова"
+                    width={500}
+                    height={650}
+                />
+            </div>
+
+            <div class="hero-note" aria-hidden="true">
+                <span>Интерьеры,</span>
+                <span>которые</span>
+                <span>работают</span>
             </div>
         </div>
-        <div class="img-wrapper">
-            <Image src={HeroImage} alt="Hero" width={500} height={650} />
+
+        <div class="hero-description">
+            <p class="hero-subtitle">
+                Помогу сделать квартиру привлекательнее для арендаторов и
+                покупателей, выгодно выделить её среди других предложений
+                и подготовить к выходу на рынок
+            </p>
         </div>
+
+        <ul class="hero-benefits">
+            <li class="hero-benefits-item">
+                <span class="hero-benefits-icon" aria-hidden="true">
+                    <VaseIcon />
+                </span>
+                <span>Экономлю ваше время</span>
+            </li>
+        
+            <li class="hero-benefits-item">
+                <span class="hero-benefits-icon" aria-hidden="true">
+                    <Vase2Icon />
+                </span>
+                <span>Берегу бюджет</span>
+            </li>
+        
+            <li class="hero-benefits-item">
+                <span class="hero-benefits-icon" aria-hidden="true">
+                    <CactusIcon />
+                </span>
+                <span>Красиво и функционально</span>
+            </li>
+        
+            <li class="hero-benefits-item">
+                <span class="hero-benefits-icon" aria-hidden="true">
+                    <PlantIcon />
+                </span>
+                <span>Готовлю к публикации</span>
+            </li>
+        </ul>
+
+        <div class="hero-cta">
+            <a href="#contact" class="btn btn--primary">
+                Обсудить квартиру
+            </a>
+
+            <a href="#how-it-works" class="btns--secondary">
+                <span class="btn--secondary btn--secondary-unhovered">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                    >
+                        <path
+                            d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+                        />
+                    </svg>
+
+                    Как я работаю
+                </span>
+
+                <span
+                    class="btn--secondary btn--secondary-hovered"
+                    aria-hidden="true"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                    >
+                        <path
+                            d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+                        />
+                    </svg>
+
+                    Как я работаю
+                </span>
+            </a>
+        </div>
+
     </div>
 </section>
 
@@ -56,50 +117,215 @@ import HeroImage from "/src/assets/images/selfy.png";
     .hero {
         min-height: 100vh;
         padding-block: 6.688rem var(--px-56);
+
         display: flex;
         align-items: center;
     }
 
+    /*
+        DESKTOP LAYOUT
+
+        tag          portrait
+        title        portrait
+        description  portrait
+        benefits     portrait
+        cta          portrait
+    */
+
     .hero-container {
         width: 100%;
+
         display: grid;
-        grid-template-columns: 60% 40%;
-        gap: var(--px-64);
+
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(19rem, 0.75fr);
+
+        grid-template-areas:
+            "tag portrait"
+            "title portrait"
+            "description portrait"
+            "benefits portrait"
+            "cta portrait";
+
+        column-gap: clamp(var(--px-48), 6vw, 7rem);
+
         align-items: center;
     }
 
+    .hero-tag {
+        grid-area: tag;
+
+        align-self: end;
+
+        margin-bottom: var(--px-16);
+    }
+
     .hero-title {
-        margin-bottom: var(--px-28);
-        font-size: clamp(2.125rem, 6vw, var(--text-6xl));        
+        grid-area: title;
+
+        margin: 0 0 var(--px-28);
+
+        font-size: clamp(2.125rem, 4.5vw, var(--text-6xl));
         line-height: 1;
+
         text-transform: uppercase;
+
         font-family: var(--font-unbounded);
         letter-spacing: 0.05em;
         font-weight: 800;
     }
 
+    .hero-description {
+        grid-area: description;
+    }
+
     .hero-subtitle {
-        font-size: clamp(var(--text-xl), 2vw, var(--text-2xl));
-        margin-bottom: var(--px-48);
+        max-width: 46rem;
+
+        margin: 0 0 var(--px-40);
+
+        font-size: clamp(var(--text-xl), 1.55vw, var(--text-2xl));
         line-height: 1.5;
     }
 
-    .hero-cta {
+    /*
+        BENEFITS — desktop
+       
+    */
+
+    .hero-benefits {
+        grid-area: benefits;
+
         display: flex;
-        gap: var(--px-16) var(--px-48);
         flex-wrap: wrap;
+        align-items: center;
+
+        margin: 0 0 var(--px-40);
+        padding: 0;
+
+        list-style: none;
+
+        font-size: clamp(var(--text-base), 1.25vw, var(--text-xl));
+        line-height: 1.5;
+    }
+
+    .hero-benefits-item {
+        display: flex;
+        align-items: center;
+    }
+
+  
+    .hero-benefits-icon {
+        display: none;
+    }
+
+   
+
+    .hero-benefits-item:not(:last-child)::after {
+        content: "|";
+
+        margin-inline: var(--px-8);
+
+        opacity: 0.6;
+    }
+
+   
+
+    .hero-portrait {
+        grid-area: portrait;
+
+        position: relative;
+
+        width: min(100%, 31rem);
+
+        justify-self: end;
+    }
+
+    .hero-portrait-image {
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+    .hero-portrait-image :global(img) {
+        display: block;
+
+        width: 100%;
+        height: auto;
+    }
+
+ 
+    .hero-note {
+        position: absolute;
+
+        top: 13%;
+        right: -5.25rem;
+
+        display: flex;
+        flex-direction: column;
+
+        color: var(--color-accent);
+
+        font-family: Georgia, "Times New Roman", serif;
+        font-style: italic;
+        font-size: clamp(1.25rem, 1.7vw, 1.7rem);
+        line-height: 1.08;
+
+        transform: rotate(-5deg);
+
+        z-index: 2;
+    }
+
+   
+    .hero-note::after {
+        content: "";
+
+        position: absolute;
+
+        right: 1.1rem;
+        bottom: -3.4rem;
+
+        width: 4.8rem;
+        height: 3.2rem;
+
+        border-right: 1.5px solid var(--color-accent);
+        border-bottom: 1.5px solid var(--color-accent);
+
+        border-radius: 0 0 100% 0;
+
+        transform: rotate(14deg);
+
+        opacity: 0.9;
+    }
+
+    /*
+        CTA
+    */
+
+    .hero-cta {
+        grid-area: cta;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: var(--px-16) var(--px-48);
     }
 
     .btns--secondary {
-        font-weight: 500;
-        margin-top: 0.438rem;
         height: var(--px-36);
+
+        margin-top: 0.438rem;
+
+        font-weight: 500;
     }
 
     .btn--secondary {
         display: flex;
         align-items: center;
         justify-content: center;
+
         gap: var(--px-8);
     }
 
@@ -107,43 +333,212 @@ import HeroImage from "/src/assets/images/selfy.png";
         height: var(--px-16);
     }
 
-    .img-wrapper {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
+
+    /* ==============================
+       TABLET
+       ============================== */
 
     @media screen and (max-width: 64rem) {
         .hero-container {
-            gap: var(--px-32);
-        }      
+            grid-template-columns:
+                minmax(0, 1.2fr)
+                minmax(17rem, 0.8fr);
 
+            column-gap: var(--px-48);
+        }
+
+        .hero-note {
+            right: -2.5rem;
+        }
     }
+
+
+    /* ==============================
+       MOBILE
+       ============================== */
 
     @media screen and (max-width: 59.375rem) {
         .hero {
             min-height: auto;
+
+            padding-block:
+                calc(var(--px-64) + var(--px-32))
+                var(--px-56);
+
+            align-items: initial;
         }
 
+       
         .hero-container {
+            display: grid;
+
             grid-template-columns: 1fr;
-            gap: var(--px-32);
+
+            grid-template-areas:
+                "tag"
+                "title"
+                "portrait"
+                "description"
+                "benefits"
+                "cta";
+
+            gap: 0;
+        }
+
+        .hero-tag {
+            margin-bottom: var(--px-16);
         }
 
         .hero-title {
-            margin-bottom: var(--px-24);
+            margin-bottom: var(--px-28);
+
+            font-size: clamp(2rem, 9.5vw, 3.2rem);
+            line-height: 0.98;
+            letter-spacing: 0.02em;
+        }
+
+      
+        .hero-portrait {
+            justify-self: start;
+
+            width: auto;
+
+            display: flex;
+            align-items: center;
+
+            gap: clamp(var(--px-24), 8vw, var(--px-48));
+
+            margin-bottom: var(--px-28);
+        }
+
+        .hero-portrait-image {
+            flex: 0 0 auto;
+
+            width: clamp(7rem, 30vw, 9rem);
+
+            aspect-ratio: 1 / 1;
+
+            border-radius: 50%;
+        }
+
+        .hero-portrait-image :global(img) {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+       
+        .hero-note {
+            position: relative;
+
+            top: auto;
+            right: auto;
+
+            flex: 0 0 auto;
+
+            font-size: clamp(1.2rem, 5vw, 1.55rem);
+            line-height: 1.05;
+
+            transform: rotate(-4deg);
+        }
+
+        .hero-note::after {
+            right: auto;
+            left: -2.7rem;
+            bottom: -1.8rem;
+
+            width: 3.2rem;
+            height: 1.7rem;
+
+            border-right: none;
+            border-left: 1.5px solid var(--color-accent);
+            border-bottom: 1.5px solid var(--color-accent);
+
+            border-radius: 0 0 0 100%;
+
+            transform: rotate(-8deg);
         }
 
         .hero-subtitle {
-            margin-bottom: var(--px-36);
+            max-width: 38rem;
+
+            margin-bottom: var(--px-32);
+
+            font-size: clamp(var(--text-lg), 4.8vw, var(--text-xl));
+            line-height: 1.5;
+        }
+
+        /*
+            BENEFITS — mobile
+           
+        */
+
+        .hero-benefits {
+            display: grid;
+
+            gap: var(--px-12);
+
+            margin-bottom: var(--px-32);
+
+            font-size: var(--text-base);
+            line-height: 1.4;
+        }
+
+        .hero-benefits-item {
+            display: flex;
+            align-items: center;
+
+            gap: var(--px-12);
+        }
+
+       
+        .hero-benefits-item:not(:last-child)::after {
+            display: none;
+        }
+
+       
+        .hero-benefits-icon {
+            display: block;
+
+            flex: 0 0 24px;
+
+            width: 24px;
+            height: 24px;
+
+            color: var(--color-accent);
         }
 
         .hero-cta {
-            column-gap: var(--px-32);
+            gap: var(--px-16) var(--px-32);
+        }
+    }
+
+
+    /* ==============================
+       SMALL MOBILE
+       ============================== */
+
+    @media screen and (max-width: 36rem) {
+        .hero-portrait {
+            gap: var(--px-28);
         }
 
-        .img-wrapper {
-            min-height: 18.75rem;
+        .hero-portrait-image {
+            width: 7rem;
+        }
+
+        .hero-note {
+            font-size: 1.2rem;
+        }
+
+        .hero-cta {
+            width: 100%;
+        }
+
+        .hero-cta .btn--primary {
+            flex: 1 1 auto;
         }
     }
 </style>
