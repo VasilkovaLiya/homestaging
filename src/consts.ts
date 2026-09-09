@@ -13,7 +13,7 @@ export const SITE: Site = {
 
   LOCALE: 'ru',
 
-  TELEPHONE: '',
+  TELEPHONE: '+79222313467',
   EMAIL: '',
   ADDRESS: '',
 
