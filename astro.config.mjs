@@ -14,7 +14,14 @@ export default defineConfig({
   build: {
     inlineStylesheets: "always",
   },
-
+  // vite: {
+  //   optimizeDeps: {
+  //     include: [
+  //       "swiper",
+  //       "swiper/modules",
+  //     ],
+  //   },
+  // },
   fonts: [
     {
       provider: fontProviders.local(),
