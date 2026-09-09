@@ -14,7 +14,7 @@ export const SITE: Site = {
   LOCALE: 'ru',
 
   TELEPHONE: '+79222313467',
-  EMAIL: '',
+  EMAIL: 'liavasilkova@yandex.ru',
   ADDRESS: '',
 
   OG_IMAGE: '/og-image.webp',

@@ -233,7 +233,7 @@ const slides = [
     .portfolio-item {
         display: flex;
         flex-direction: column;
-        gap: var(--px-16);
+        gap: var(--px-8);
         margin: 0;
         min-width: 0;
     }
@@ -264,7 +264,7 @@ const slides = [
     .image-label {
         position: absolute;
         left: var(--px-16);
-        top: var(--px-16);
+        bottom: var(--px-16);
         z-index: 1;
         padding: var(--px-8) var(--px-16);
         background: rgba(255, 255, 255, 0.88);
@@ -327,6 +327,8 @@ const slides = [
 
     .info-text {
         margin: 0;
+        background: white;
+        padding: var(--px-8);
     }
 
     @media screen and (max-width: 64rem) {
@@ -341,6 +343,11 @@ const slides = [
         .portfolio-item--portrait .portfolio-image,
         .portfolio-item--portrait .item-caption {
             width: 78%;
+        }
+        .info-text {
+            font-size: var(--text-xs);
+            line-height: 1;
+            font-style: italic;
         }
     }
 
@@ -369,7 +376,7 @@ const slides = [
         .portfolio-slide--gallery
             .portfolio-item--landscape
             .portfolio-image {
-            width: 100%;
+            width: 60%;
         }
 
         .portfolio-slide--gallery
@@ -382,14 +389,14 @@ const slides = [
         .portfolio-slide--gallery
             .portfolio-item--portrait
             .portfolio-image {
-            width: 55%;
+            width: 35%;
             margin-inline: auto;
         }
 
         .portfolio-slide--gallery
             .portfolio-item--portrait
             .item-caption {
-            width: 55%;
+            width: 35%;
             margin-inline: auto;
         }
 
@@ -403,10 +410,10 @@ const slides = [
             position: relative;
             min-height: 32rem;
         }
-
+/* 
         .portfolio-slide--transformation .portfolio-item {
             gap: var(--px-12);
-        }
+        } */
 
         .portfolio-slide--transformation .portfolio-item--before {
             position: absolute;
@@ -442,7 +449,7 @@ const slides = [
 
         .image-label {
             left: var(--px-12);
-            top: var(--px-12);
+            bottom: var(--px-12);
             padding: var(--px-8) var(--px-12);
         }
     }
@@ -479,7 +486,7 @@ const slides = [
         .portfolio-slide--gallery
             .portfolio-item--portrait
             .item-caption {
-            width: 78%;
+            width: 40%;
         }
     }
 </style>

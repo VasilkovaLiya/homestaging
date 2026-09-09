@@ -1,36 +1,46 @@
 ---
 import { SITE } from "@consts";
-
+import { Image } from 'astro:assets';
 const currentYear = new Date().getFullYear();
+import FooterImage from "/src/assets/images/branch.png";
 ---
 
-<footer class="main-footer">
+<footer class="footer-section">
     <div class="section-container footer-inner">
         <div class="footer-main">
             <div class="footer-intro">
                 <p class="footer-title">
-                    Хоумстейджинг и подготовка квартир к аренде и продаже
+                    Есть квартира,
+                    <br />
+                    которой нужны
+                    <span class="footer-title-accent">перемены?</span>
                 </p>
 
                 <div class="footer-contacts">
-                    <a href={`tel:${SITE.TELEPHONE}`} class="footer-link">
-                        {SITE.TELEPHONE}
-                    </a>
-
                     <a href={`mailto:${SITE.EMAIL}`} class="footer-link">
                         {SITE.EMAIL}
                     </a>
+
+                    <span class="footer-divider" aria-hidden="true"></span>
 
                     <span class="footer-location">
                         Челябинск
                     </span>
                 </div>
             </div>
+
+            <div class="footer-decoration" aria-hidden="true">
+                <Image
+                src={FooterImage}
+                alt="Интерьер с мебелью, текстилем, освещением и декоративными деталями."
+                class="media"
+              />
+            </div>
         </div>
 
         <div class="footer-bottom">
             <p class="copyright">
-                © {currentYear} Имя Фамилия
+                © {currentYear} Лия Василькова
             </p>
 
             <a href="/legal/privacy" class="footer-link footer-policy">
@@ -40,105 +50,218 @@ const currentYear = new Date().getFullYear();
     </div>
 </footer>
 
+
 <style>
-    .main-footer {
+    .footer-section {
+        overflow: hidden;
         background-color: var(--color-background);
-        color: var(--color-text-dark);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding: var(--px-32) var(--px-64);
+        margin: 0;
+        padding: var(--px-64) var(--px-64);       
     }
+    
 
     .footer-inner {
         display: flex;
         flex-direction: column;
+        gap: var(--px-48);
     }
 
     .footer-main {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: var(--px-48);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
+
+        align-items: center;
+        position: relative;
+        gap: var(--px-48);
     }
 
     .footer-intro {
-        max-width: 38rem;
+        min-width: 0;
     }
 
     .footer-title {
-        margin: 0 0 var(--px-24);
-        font-size: var(--text-2xl);
-        font-weight: 600;
-        line-height: 1.35;
+        margin: 0 0 var(--px-32);
+
+        max-width: 44rem;
+
+        font-family: var(--font-unbounded);
+        font-size: clamp(1.75rem, 3vw, 3.5rem);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: 0.01em;
+
         color: var(--color-text-primary);
+    }
+
+    .footer-title-accent {
+        display: inline-block;
+
+        margin-left: 0.15em;
+
+        font-family: Georgia, "Times New Roman", serif;
+        font-style: italic;
+        font-weight: 400;
+
+        color: var(--color-accent);
+
+        transform: rotate(-2deg);
     }
 
     .footer-contacts {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
-        gap: var(--px-12) var(--px-24);
-        font-size: var(--text-sm);
+        flex-wrap: wrap;
+
+        gap: var(--px-16);
+
+        font-size: var(--text-base);
     }
 
     .footer-link {
         color: inherit;
         text-decoration: none;
-        transition: color var(--transition-short);
+
+        transition:
+            color var(--transition-short),
+            opacity var(--transition-short);
     }
 
     .footer-location {
+        opacity: 0.6;
+    }
+
+    .footer-divider {
+        display: block;
+
+        width: 1px;
+        height: 1.4em;
+
+        background: var(--color-accent);
+
         opacity: 0.7;
+    }
+
+    .footer-decoration {
+        position: absolute;
+        transform: rotate(345deg);       
+        height: auto;
+        width: 800px;
+        right: 0;
+        pointer-events: none;
+        opacity: 0.75;
+    }
+
+    .footer-decoration svg {
+        display: block;
+
+        width: 100%;
+        height: auto;
     }
 
     .footer-bottom {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+
         gap: var(--px-24);
-        padding-top: var(--px-24);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        font-size: var(--text-sm);
+
+        padding-top: var(--px-28);
+
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
 
     .copyright {
         margin: 0;
-        opacity: 0.7;
+
+        opacity: 0.55;
     }
 
     .footer-policy {
-        opacity: 0.7;
+        opacity: 0.55;
     }
 
     @media (hover: hover) and (pointer: fine) {
         .footer-link:hover {
-            color: var(--color-text-primary);
+            color: var(--color-accent);
+        }
+    }
+
+    @media screen and (max-width: 64rem) {
+        .footer-section {
+            padding: var(--px-80) var(--px-28);
+        }
+        .footer-main {
+            grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.7fr);            
+            gap: var(--px-32);
+        }
+
+        .footer-title {
+            max-width: 36rem;
+        }
+
+        .footer-decoration {
+            width: min(100%, 22rem);
         }
     }
 
     @media screen and (max-width: 48rem) {
-        .main-footer {
-            padding-block: var(--px-48) var(--px-24);
+       
+
+        .footer-inner {
+            gap: var(--px-32);
         }
 
         .footer-main {
-            padding-bottom: var(--px-32);
+            grid-template-columns: 1fr;
+            gap: var(--px-24);
         }
 
         .footer-title {
-            font-size: var(--text-lg);
-            margin-bottom: var(--px-20);
+            margin-bottom: var(--px-24);
+
+            max-width: 30rem;
+
+            font-size: clamp(1.6rem, 7vw, 2.4rem);
+            line-height: 1.15;
         }
 
-        .footer-contacts {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: var(--px-8);
+        .footer-decoration {
+            justify-self: end;
+
+            width: min(72vw, 19rem);
+
+            margin-top: calc(var(--px-16) * -1);
+
+            opacity: 0.4;
         }
 
         .footer-bottom {
-            flex-direction: column;
             align-items: flex-start;
-            gap: var(--px-8);
-            padding-top: var(--px-20);
+            flex-direction: column;
+
+            gap: var(--px-12);
+
+            padding-top: var(--px-24);
+        }
+    }
+
+    @media screen and (max-width: 42.188rem) {
+        .footer-section {
+            padding: var(--px-64) var(--px-20);
+        }    
+    }
+
+    @media screen and (max-width: 36rem) {
+        .footer-title {
+            font-size: clamp(1.5rem, 8vw, 2rem);
+        }
+
+        .footer-contacts {
+            gap: var(--px-12);
+        }
+
+        .footer-decoration {
+            width: min(80vw, 17rem);
         }
     }
 </style>
