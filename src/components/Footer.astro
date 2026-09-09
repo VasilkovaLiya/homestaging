@@ -56,7 +56,8 @@ import FooterImage from "/src/assets/images/branch.png";
         overflow: hidden;
         background-color: var(--color-background);
         margin: 0;
-        padding: var(--px-64) var(--px-64);       
+        padding: var(--px-64) var(--px-64);   
+        position: relative;    
     }
     
 
@@ -71,12 +72,13 @@ import FooterImage from "/src/assets/images/branch.png";
         grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
 
         align-items: center;
-        position: relative;
         gap: var(--px-48);
     }
 
     .footer-intro {
         min-width: 0;
+        position: relative;
+        z-index: 2;
     }
 
     .footer-title {
@@ -95,7 +97,7 @@ import FooterImage from "/src/assets/images/branch.png";
 
     .footer-title-accent {
         display: inline-block;
-
+        font-size: clamp(2.25rem, 4vw, 4.5rem);
         margin-left: 0.15em;
 
         font-family: Georgia, "Times New Roman", serif;
@@ -143,21 +145,16 @@ import FooterImage from "/src/assets/images/branch.png";
 
     .footer-decoration {
         position: absolute;
+        z-index: 1;
         transform: rotate(345deg);       
         height: auto;
-        width: 800px;
+        width: 40%;
         right: 0;
         pointer-events: none;
         opacity: 0.75;
     }
 
-    .footer-decoration svg {
-        display: block;
-
-        width: 100%;
-        height: auto;
-    }
-
+   
     .footer-bottom {
         display: flex;
         align-items: center;
@@ -199,13 +196,15 @@ import FooterImage from "/src/assets/images/branch.png";
             max-width: 36rem;
         }
 
-        .footer-decoration {
-            width: min(100%, 22rem);
-        }
     }
 
     @media screen and (max-width: 48rem) {
-       
+        .footer-decoration {
+            width: 80%;
+            opacity: 0.3;
+            top: 0;
+            transform: rotate(10deg);       
+        }
 
         .footer-inner {
             gap: var(--px-32);
@@ -224,16 +223,7 @@ import FooterImage from "/src/assets/images/branch.png";
             font-size: clamp(1.6rem, 7vw, 2.4rem);
             line-height: 1.15;
         }
-
-        .footer-decoration {
-            justify-self: end;
-
-            width: min(72vw, 19rem);
-
-            margin-top: calc(var(--px-16) * -1);
-
-            opacity: 0.4;
-        }
+      
 
         .footer-bottom {
             align-items: flex-start;
@@ -260,8 +250,5 @@ import FooterImage from "/src/assets/images/branch.png";
             gap: var(--px-12);
         }
 
-        .footer-decoration {
-            width: min(80vw, 17rem);
-        }
     }
 </style>
